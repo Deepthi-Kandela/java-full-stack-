@@ -1,0 +1,684 @@
+/* ===== Think Mart : shared styles (Home, Products, Cart, About, Contact) ===== */
+
+:root {
+  --blue-dark: #26558b;
+  --blue: #3a84c3;
+  --blue-light: #cedbe9;
+  --sky: #4bb8f0;
+  --beige: beige;
+  --brown: brown;
+  --green: #00ff00;
+  --yellow: #ffff00;
+  --text: #2b2b2b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--text);
+  background: #f4f8fc;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--brown);
+  outline-offset: 2px;
+}
+
+/* ---------- Header / Navigation ---------- */
+header {
+  padding: 12px 20px;
+  background-image: linear-gradient(powderblue, blue);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  text-decoration: none;
+  font-family: Cambria, Cochin, Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 28px;
+  color: aliceblue;
+  text-shadow: 2px 2px 3px black;
+  padding: 2px 14px;
+  border-radius: 10px;
+  background: rgba(38, 85, 139, 0.55);
+}
+
+nav > ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+}
+
+nav > ol > li {
+  background-color: var(--beige);
+  border-radius: 8px;
+}
+
+nav > ol > li > a {
+  display: block;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--brown);
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav > ol > li > a:hover,
+nav > ol > li > a.active {
+  background: var(--brown);
+  color: var(--beige);
+}
+
+nav > ol > li:last-child > a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------- Home hero ---------- */
+#title {
+  position: relative;
+  height: 75vh;
+  min-height: 360px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #26558b, #4bb8f0);
+}
+
+#title video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#title .hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+#title h1 {
+  padding: 20px 30px;
+  color: aliceblue;
+  text-shadow: 4px 4px 4px black;
+  font-size: clamp(24px, 4.5vw, 46px);
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  animation: scaling 3s ease-out;
+}
+
+#title p {
+  color: aliceblue;
+  font-size: 20px;
+  text-shadow: 2px 2px 3px black;
+  margin-bottom: 24px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 36px;
+  background: var(--yellow);
+  color: #222;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.hero-btn:hover {
+  background: var(--green);
+}
+
+@keyframes scaling {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* ---------- Page titles / sections ---------- */
+.page-title {
+  text-align: center;
+  font-style: italic;
+  font-family: Cambria, Georgia, serif;
+  font-size: 38px;
+  padding: 36px 20px 10px;
+  color: var(--blue-dark);
+}
+
+.page-sub {
+  text-align: center;
+  color: #5a6b7c;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.section-title {
+  font-style: italic;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 35px;
+  text-align: center;
+  margin: 40px 0 20px;
+  color: var(--blue-dark);
+}
+
+/* ---------- Product cards ---------- */
+#products-container,
+#product-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 10px 20px 30px;
+}
+
+.card {
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(
+    135deg,
+    #cedbe9 0%,
+    #aac5de 9%,
+    #6199c7 32%,
+    #3a84c3 51%,
+    #419ad6 59%,
+    #4bb8f0 71%,
+    #3a8bc2 84%,
+    #26558b 100%
+  );
+  width: 330px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.card-header {
+  width: 100%;
+}
+
+.pic {
+  height: 210px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 110px;
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+.pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.pic:hover {
+  transform: scale(1.06);
+  cursor: pointer;
+}
+
+.card-body {
+  width: 100%;
+  padding-top: 12px;
+}
+
+.card h1 {
+  font-size: 18px;
+  margin-left: 6px;
+  color: #10243a;
+}
+
+.card h1:first-child {
+  color: aliceblue;
+  text-shadow: 3px 3px 3px black;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 32px;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #1d2f43;
+  margin: 10px 6px 0;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.card-footer {
+  margin-top: 20px;
+}
+
+.card-footer form {
+  display: flex;
+  gap: 10px;
+}
+
+.card-footer button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.card-footer button:first-child {
+  background-color: var(--green);
+}
+.card-footer button:last-child {
+  background-color: var(--yellow);
+}
+.card-footer button:hover {
+  filter: brightness(0.9);
+}
+
+.more {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ---------- Top brands strip (pure CSS scroll) ---------- */
+#brand-container {
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+.brand-track {
+  display: flex;
+  width: max-content;
+  gap: 40px;
+  padding: 10px 0;
+  animation: slide 25s linear infinite;
+}
+.brand-track:hover {
+  animation-play-state: paused;
+}
+
+.brand-track span {
+  background: white;
+  color: var(--blue-dark);
+  font-weight: bold;
+  font-size: 24px;
+  font-style: italic;
+  padding: 18px 40px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- Boxes (About / Contact) ---------- */
+.box {
+  width: min(900px, 90%);
+  margin: 20px auto 40px;
+  padding: 30px;
+  border-radius: 10px;
+  background: var(--beige);
+  line-height: 1.8;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.box h2 {
+  color: var(--brown);
+  font-style: italic;
+  margin: 10px 0 8px;
+}
+
+.box p {
+  margin-bottom: 12px;
+}
+
+.box ul {
+  margin: 0 0 12px 24px;
+}
+
+.stats {
+  width: min(900px, 90%);
+  margin: 0 auto 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.stats div {
+  flex: 1 1 180px;
+  text-align: center;
+  padding: 22px 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(135deg, #6199c7, #26558b);
+  color: aliceblue;
+}
+.stats strong {
+  display: block;
+  font-size: 34px;
+  text-shadow: 2px 2px 3px black;
+}
+
+/* ---------- Cart ---------- */
+.table-wrap {
+  width: min(1000px, 94%);
+  margin: 10px auto;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+th,
+td {
+  padding: 14px 12px;
+  border: 1px solid var(--blue-light);
+}
+
+th {
+  background: var(--blue);
+  color: white;
+}
+
+td.item-pic {
+  font-size: 40px;
+}
+.item-pic img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.remove {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #ffd2d2;
+  color: #a10000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cart-summary {
+  width: min(1000px, 94%);
+  margin: 20px auto 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.cart-total {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--blue-dark);
+}
+
+.cart-btn {
+  display: inline-block;
+  padding: 12px 34px;
+  border: none;
+  border-radius: 5px;
+  background: var(--yellow);
+  color: #222;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+.cart-btn.green {
+  background: var(--green);
+}
+.cart-btn:hover {
+  filter: brightness(0.9);
+}
+
+/* Order-placed popup (pure CSS using :target) */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+.modal:target {
+  display: flex;
+}
+.modal-box {
+  background: white;
+  padding: 40px;
+  border-radius: 14px;
+  text-align: center;
+  width: min(420px, 90%);
+}
+.modal-box h2 {
+  color: var(--blue-dark);
+  margin: 10px 0;
+}
+.modal-box p {
+  margin-bottom: 20px;
+  color: #555;
+}
+.modal-box .big {
+  font-size: 70px;
+}
+
+/* ---------- Contact form ---------- */
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  color: var(--brown);
+  margin-bottom: 4px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 2px solid var(--blue-light);
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+.contact-info div {
+  flex: 1 1 200px;
+  padding: 14px;
+  background: white;
+  border-radius: 8px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 50px;
+  padding: 40px 20px 20px;
+  background-image: linear-gradient(#3a84c3, #26558b);
+  color: aliceblue;
+}
+
+.footer-cols {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-cols h3 {
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.footer-cols a {
+  display: block;
+  color: aliceblue;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+.footer-cols a:hover {
+  text-decoration: underline;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 26px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .brand-track,
+  #title h1 {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+  nav > ol > li > a {
+    padding: 8px 12px;
+  }
+}
+
+
+/* ---------- Added for the backend-connected pages ---------- */
+.qty-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.qty-btn:hover { background: var(--blue-dark); }
+
+.toolbar {
+  width: min(1000px, 94%);
+  margin: 0 auto 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.toolbar input,
+.toolbar select {
+  flex: 1 1 180px;
+  padding: 10px;
+  border: 2px solid var(--blue-light);
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.order-block { margin-bottom: 28px; }
+.order-block h3 { margin: 14px 0 8px; color: var(--blue-dark); }
+.order-block .ship { margin-top: 6px; font-size: 14px; }
+
+.small-btn {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 5px;
+  background: var(--blue);
+  color: white;
+  cursor: pointer;
+  margin: 2px;
+}
+.small-btn.danger { background: #c62828; }
+
+#toast-box {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.toast {
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #1b5e20;
+  color: white;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  font-size: 15px;
+}
+.toast.error { background: #b71c1c; }

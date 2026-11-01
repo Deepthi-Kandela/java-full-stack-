@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  /* fallback shows if the video can't load */
+  background: linear-gradient(135deg, #0a1f44, #26558b, #4bb8f0);
+  background-attachment: fixed;
+}
+
+/* full-screen background video behind everything */
+.bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* dark overlay so the form text stays readable */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 10px;
+}
+
+fieldset {
+  border: none;
+  box-shadow: 10px 10px 50px aliceblue;
+  border-radius: 10px 50px;
+  padding: 50px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.25);
+  animation-name: scaling;
+  animation-duration: 2s;
+  max-width: 100%;
+}
+
+@keyframes scaling {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+label {
+  display: inline-block;
+  min-width: 170px;
+  color: aliceblue;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+label::after {
+  content: "*";
+  color: red;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: "Rye", serif;
+  color: transparent;
+  font-style: italic;
+  background-image: linear-gradient(45deg, white, orange, red, darkred);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1::first-letter {
+  font-size: 70px;
+}
+
+legend {
+  color: aliceblue;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 28px;
+  text-shadow: 4px 4px 4px black;
+  font-family: "Lavishly Yours", cursive;
+}
+
+button {
+  padding: 10px 30px;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+}
+
+input[type="radio"] {
+  padding: 0;
+  margin-left: 8px;
+}
+
+/* the text next to radio buttons / small notes */
+span {
+  color: white;
+  margin-right: 8px;
+}
+
+a {
+  color: orange;
+  font-weight: bold;
+}
+
+.links {
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  fieldset {
+    padding: 24px;
+  }
+  label {
+    display: block;
+    min-width: 0;
+  }
+}

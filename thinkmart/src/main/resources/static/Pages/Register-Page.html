@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+
+<body data-public="1">
+    <video class="bg-video" src="../bg-video.mp4" autoplay muted loop playsinline></video>
+    <form id="registerForm">
+        <fieldset>
+            <legend>Think Mart</legend>
+            <h1>Sign-Up Form</h1>
+
+            <label for="fname">FirstName :</label>
+            <input required maxlength="10" minlength="3" type="text" id="fname" placeholder="Enter FirstName">
+            <br><br>
+
+            <label for="lname">LastName :</label>
+            <input required maxlength="10" minlength="3" type="text" id="lname" placeholder="Enter LastName">
+            <br><br>
+
+            <label for="email">Email :</label>
+            <input required type="email" id="email" placeholder="Enter Email">
+            <br><br>
+
+            <label for="phn">Phone No :</label>
+            <input required type="tel" id="phn" pattern="[6-9]{1}[0-9]{9}" title="10 digits starting with 6, 7, 8 or 9" placeholder="+91">
+            <br><br>
+
+            <label for="psw">Password :</label>
+            <input required id="psw" type="password" maxlength="20" minlength="6" placeholder="Create new Password">
+            <br><br>
+
+            <label for="cpsw">Confirm Password :</label>
+            <input required id="cpsw" type="password" maxlength="20" minlength="6" placeholder="Confirm new Password">
+            <br><br>
+
+            <label for="dob">DateOfBirth :</label>
+            <input required id="dob" type="date">
+            <br><br>
+
+            <label>Gender :</label>
+            <input type="radio" name="gender" id="male" value="Male" required> <span>Male</span>
+            <input type="radio" name="gender" id="female" value="Female"> <span>Female</span>
+            <input type="radio" name="gender" id="others" value="Others"> <span>Others</span>
+            <br><br>
+
+            <label for="state">State :</label>
+            <select name="state" id="state" required>
+                <option value="">Choose State</option>
+                <option value="Andhra Pradesh">AP</option>
+                <option value="Karnataka">KA</option>
+                <option value="Tamil Nadu">TN</option>
+                <option value="Telangana">TS</option>
+                <option value="Kerala">KL</option>
+            </select>
+            <br><br>
+
+            <label for="address">Address :</label>
+            <textarea rows="2" cols="30" name="address" id="address" placeholder="Enter Full Address" required></textarea>
+            <br><br>
+
+            <label>Role :</label>
+            <input type="radio" name="role" id="vendor" value="Vendor" required> <span>Vendor</span>
+            <input type="radio" name="role" id="customer" value="Customer"> <span>Customer</span>
+            <br><br>
+
+            <label for="pic">Profile Pic :</label>
+            <input type="file" id="pic" accept=".png,.jpeg,.jpg">
+            <br><br>
+
+            <p id="formMsg" style="color:#ffb3b3;font-weight:bold;min-height:1.4em"></p>
+            <button type="submit">Register</button>
+            <button type="reset">Cancel</button>
+
+            <p class="links">Already have an account? <a href="Login-Page.html">Login here</a></p>
+        </fieldset>
+    </form>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

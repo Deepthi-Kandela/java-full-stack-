@@ -1,0 +1,3 @@
+Put product photos here with EXACTLY these names (.jpg):
+vivo-v29, samsung-galaxy, hp-pavilion, boat-rockerz, noise-colorfit, dell-monitor,
+canon-eos, jbl-flip, logitech-k380, hp-mouse, sony-bravia, mi-powerbank
